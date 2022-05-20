@@ -9,8 +9,9 @@ var app = express()
 
 app.use(cors())
 app.use(express.static(__dirname + '/public'))
+app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/views/index.html'))
+  res.render(path.join(__dirname + '/views/index.ejs'))
 })
 
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
