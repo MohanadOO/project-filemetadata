@@ -9,8 +9,9 @@ var app = express()
 
 app.use(cors())
 app.use(express.static(__dirname + '/public'))
+app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render(path.join(__dirname + '/views/index.ejs'))
 })
 
@@ -28,3 +29,5 @@ const port = process.env.PORT || 3000
 app.listen(port, function () {
   console.log('Your app is listening on port ' + port)
 })
+
+module.exports = app
