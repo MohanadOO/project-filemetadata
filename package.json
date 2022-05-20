@@ -22,5 +22,8 @@
     "node",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/node": "^1.15.3"
+  }
 }
